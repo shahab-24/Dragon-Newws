@@ -14,11 +14,11 @@ const LeftSide = () => {
       <h2 className="font-semibold mb-2">All Category</h2>
       <div className="flex flex-col  gap-2">
         {
-          categories.map(category => <NavLink key={category.category_id} to="#">
-            <button className="btn bg-base-200 border-none text-center w-full" >
+          categories.map(category => 
+            <NavLink key={category.category_id}  to={`/category/${category.category_id}`} className="btn bg-base-200 border-none text-center w-full" >
             {category.category_name}
-          </button>
-          </NavLink>)
+          </NavLink>
+        )
         }
       </div>
     </div>

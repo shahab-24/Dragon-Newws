@@ -24,7 +24,7 @@ const Header = () => {
       </div>
       <h2 className="text-gray-500">Journalism Without Fear or Favour</h2>
       <div className="flex gap-4">
-        <p>Date: {currentDate}</p>
+        <p>{currentDate}</p>
         <p>Time: {currentTime}</p>
       </div>
     </div>
