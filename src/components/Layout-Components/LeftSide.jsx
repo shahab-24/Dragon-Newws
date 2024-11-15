@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Latest = () => {
+const LeftSide = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(()=>{
@@ -11,20 +10,19 @@ const Latest = () => {
     .then((data)=> setCategories(data.data.news_category))
   },[])
   return (
-    <div className="flex gap-2 items-center">
-      <p className="bg-[#D72050] px-2 py-1 text-white">Latest</p>
-      <Marquee pauseOnHover={true} className="bg-base-300 py-2 flex gap-2 space-x-4">
-      {
-          categories.map(category => <Link className="" key={category.category_id} to="#">
+    <div>
+      <h2 className="font-semibold mb-2">All Category</h2>
+      <div className="flex flex-col  gap-2">
+        {
+          categories.map(category => <NavLink key={category.category_id} to="#">
             <button className="btn bg-base-200 border-none text-center w-full" >
             {category.category_name}
           </button>
-          </Link>)
+          </NavLink>)
         }
-
-      </Marquee>
+      </div>
     </div>
   );
 };
 
-export default Latest;
+export default LeftSide;
